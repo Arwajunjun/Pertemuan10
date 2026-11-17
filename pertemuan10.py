@@ -30,6 +30,14 @@ ticker_data= yf.Ticker(ticker_symbol)
 
 pilihan_periode = st.selectbox(
     'pilih periode:',
+  ['1d', '5d', '2mo', '5mo', '1y', '5y']
+)
+tgl_mulai = st.date_input(
+    'mulai tanggal',
+    value=date.today()
+)
+tgl_akhir = st.date_input(
+    'sampel tanggal',
     value=date.today()
 )
 st.write(f'Tanggal mulai:{Tgl_mulai}')
@@ -45,7 +53,8 @@ if pilihan_tampilan_tabel == True:
     st.write("## Lima Data Awal")
     st.write(df_ticker.head() )
 
-st.write(f"##atribut=st.multiselect(
+st.write(f"## Visualisasi pergerakan saham {kamus_ticker[ticker_symbol]}")
+
          'silahkan pilih atribut yang akan ditampilkan:',
          ['Low', 'High', 'Open', 'close', 'volume']
 
