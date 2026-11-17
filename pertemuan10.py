@@ -40,8 +40,8 @@ tgl_akhir = st.date_input(
     'sampel tanggal',
     value=date.today()
 )
-st.write(f'Tanggal mulai:{Tgl_mulai}')
-st.write(f'Tanggal akhir: {Tgl_akhir}')
+st.write(f'Tanggal mulai:{tgl_mulai}')
+st.write(f'Tanggal akhir: {tgl_akhir}')
 df_ticker = ticker_data.history(
     start=str(Tgl_mulai),
     end=str(tgl_akhir)
