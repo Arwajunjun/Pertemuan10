@@ -49,7 +49,7 @@ df_ticker = ticker_data.history(
 
 pilihan_tampil_tabel = st.checkbox('Tampilan tabel')
 
-if pilihan_tampilan_tabel == True:
+if pilihan_tampil_tabel == True:
     st.write("## Lima Data Awal")
     st.write(df_ticker.head() )
 
