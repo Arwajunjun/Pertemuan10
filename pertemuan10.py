@@ -55,12 +55,19 @@ if pilihan_tampilan_tabel == True:
 
 st.write(f"## Visualisasi pergerakan saham {kamus_ticker[ticker_symbol]}")
 
+pilihan_atribut=st.multiselect(
          'silahkan pilih atribut yang akan ditampilkan:',
          ['Low', 'High', 'Open', 'close', 'volume']
+)
 
-if pilihan_tampilan_tabel == True:
-    st.write("## Lima Data Awal")
-    st.write(df_ticker.head() )
+grafik=px.line(
+    df_ticker,
+    y=pilihan_atribut,
+    title=f"harga saham{kamus_ticker[ticker_symbol]}"
+)
+st.plotly_chart(grafik)
+
+st.write()
 
 
 
