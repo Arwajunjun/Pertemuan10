@@ -43,7 +43,7 @@ tgl_akhir = st.date_input(
 st.write(f'Tanggal mulai:{tgl_mulai}')
 st.write(f'Tanggal akhir: {tgl_akhir}')
 df_ticker = ticker_data.history(
-    start=str(Tgl_mulai),
+    start=str(tgl_mulai),
     end=str(tgl_akhir)
 )
 
